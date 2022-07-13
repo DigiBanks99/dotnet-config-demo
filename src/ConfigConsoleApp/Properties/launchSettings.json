@@ -4,7 +4,9 @@
     "ConfigConsoleApp": {
       "commandName": "Project",
       "environmentVariables": {
-        "Wheel:Model": "Caravan"
+        "Wheel:Model": "Caravan",
+        "Wheel:Diameter": "32.5",
+        "DOTNET_Wheel:Model": "Upside-down Caravan"
       }
     }
   }
