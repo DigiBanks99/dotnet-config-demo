@@ -10,4 +10,12 @@ public static class WheelConfigExtensions
         string[] props = pairs.Select(pair => $"\"{pair.Key}\": \"{pair.Value}\"").ToArray();
         return $"{{\n{string.Join(",\n", props)}\n}}";
     }
+
+    public static Wheel GetBoundWheelConfigValues(this IConfiguration config)
+    {
+        IConfigurationSection wheelSection = config.GetSection("Wheel");
+        Wheel wheel = new();
+        wheelSection.Bind(wheel);
+        return wheel;
+    }
 }
