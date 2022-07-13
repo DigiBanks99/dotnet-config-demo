@@ -1,4 +1,5 @@
 using ConfigLib;
+using Microsoft.Extensions.Options;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,7 @@ WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddAuthorization();
+builder.Services.AddWheelOptions(builder.Configuration);
 
 WebApplication app = builder.Build();
 
@@ -22,6 +24,6 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
-app.MapGet("/wheels", (IConfiguration config) => config.GetBoundWheelConfigValues());
+app.MapGet("/wheels", (IOptions<Wheel> wheel) => wheel.Value);
 
 app.Run();

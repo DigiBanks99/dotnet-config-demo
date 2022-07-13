@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace ConfigLib;
 
@@ -17,5 +18,11 @@ public static class WheelConfigExtensions
         Wheel wheel = new();
         wheelSection.Bind(wheel);
         return wheel;
+    }
+
+    public static IServiceCollection AddWheelOptions(this IServiceCollection services, IConfiguration config)
+    {
+        services.Configure<Wheel>(config.GetSection("Wheel"));
+        return services;
     }
 }
