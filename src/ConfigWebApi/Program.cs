@@ -1,3 +1,5 @@
+using ConfigLib;
+
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -20,14 +22,6 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
-app.MapGet("/wheels",
-    (IConfiguration config) =>
-    {
-        var pairs = config.GetSection("Wheel")
-            .GetChildren();
-
-        string[] props = pairs.Select(pair => $"\"{pair.Key}\": \"{pair.Value}\"").ToArray();
-        return $"{{\n{string.Join(",\n", props)}\n}}";
-    });
+app.MapGet("/wheels", (IConfiguration config) => config.GetWheelConfigValues());
 
 app.Run();
