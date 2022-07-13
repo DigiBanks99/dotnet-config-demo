@@ -2,7 +2,9 @@
 
 using ConfigLib;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting.Internal;
+using Microsoft.Extensions.Options;
 
 HostingEnvironment environment = new()
 {
@@ -17,5 +19,11 @@ configBuilder.AddEnvironmentVariables()
 
 IConfiguration config = configBuilder.Build();
 
+IServiceCollection services = new ServiceCollection();
+services.AddWheelOptions(config);
+IServiceProvider provider = services.BuildServiceProvider();
+
+IOptions<Wheel> wheel = provider.GetRequiredService<IOptions<Wheel>>();
+
 Console.WriteLine("Wheels: ");
-Console.WriteLine(config.GetBoundWheelConfigValues());
+Console.WriteLine(wheel.Value);
