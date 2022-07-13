@@ -24,6 +24,6 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
-app.MapGet("/wheels", (IOptions<Wheel> wheel) => wheel.Value);
+app.MapGet("/wheels", (IOptionsMonitor<Wheel> wheel) => wheel.CurrentValue);
 
 app.Run();
