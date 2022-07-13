@@ -19,4 +19,4 @@ configBuilder.AddEnvironmentVariables()
 IConfiguration config = configBuilder.Build();
 
 Console.WriteLine("Wheels: ");
-Console.WriteLine(config.GetWheelConfigValues());
+Console.WriteLine(config.GetBoundWheelConfigValues());

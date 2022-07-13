@@ -22,6 +22,6 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
-app.MapGet("/wheels", (IConfiguration config) => config.GetWheelConfigValues());
+app.MapGet("/wheels", (IConfiguration config) => config.GetBoundWheelConfigValues());
 
 app.Run();
