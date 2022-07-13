@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{EC19
 		run.ps1 = run.ps1
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigLib", "src\ConfigLib\ConfigLib.csproj", "{D56D300A-BCC2-4BF8-AA57-F27B178AB761}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,9 +33,14 @@ Global
 		{0239E67F-1826-4538-AE39-2724E8F25EA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0239E67F-1826-4538-AE39-2724E8F25EA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0239E67F-1826-4538-AE39-2724E8F25EA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D56D300A-BCC2-4BF8-AA57-F27B178AB761}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D56D300A-BCC2-4BF8-AA57-F27B178AB761}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D56D300A-BCC2-4BF8-AA57-F27B178AB761}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D56D300A-BCC2-4BF8-AA57-F27B178AB761}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{2EA83530-A348-40E6-9443-93EEE3CB9D48} = {5996DBA5-6DE4-4A12-8376-6C76587EF18F}
 		{0239E67F-1826-4538-AE39-2724E8F25EA7} = {5996DBA5-6DE4-4A12-8376-6C76587EF18F}
+		{D56D300A-BCC2-4BF8-AA57-F27B178AB761} = {5996DBA5-6DE4-4A12-8376-6C76587EF18F}
 	EndGlobalSection
 EndGlobal
