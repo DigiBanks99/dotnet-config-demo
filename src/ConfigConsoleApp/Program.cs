@@ -23,7 +23,7 @@ IServiceCollection services = new ServiceCollection();
 services.AddWheelOptions(config);
 IServiceProvider provider = services.BuildServiceProvider();
 
-IOptions<Wheel> wheel = provider.GetRequiredService<IOptions<Wheel>>();
+IOptionsMonitor<Wheel> wheel = provider.GetRequiredService<IOptionsMonitor<Wheel>>();
 
 Console.WriteLine("Wheels: ");
-Console.WriteLine(wheel.Value);
+Console.WriteLine(wheel.CurrentValue);
