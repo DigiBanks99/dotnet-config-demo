@@ -15,7 +15,8 @@ ConfigurationBuilder configBuilder = new();
 configBuilder.AddEnvironmentVariables()
     .AddEnvironmentVariables("DOTNET_")
     .AddJsonFile("appsettings.json", true, true)
-    .AddJsonFile($"appsettings.{environment.EnvironmentName}.json", true, true);
+    .AddJsonFile($"appsettings.{environment.EnvironmentName}.json", true, true)
+    .AddYamlFile("appsettings.yml");
 
 IConfiguration config = configBuilder.Build();
 
@@ -23,7 +24,7 @@ IServiceCollection services = new ServiceCollection();
 services.AddWheelOptions(config);
 IServiceProvider provider = services.BuildServiceProvider();
 
-IOptionsMonitor<Wheel> wheel = provider.GetRequiredService<IOptionsMonitor<Wheel>>();
+var wheel = provider.GetRequiredService<IOptionsMonitor<Wheel>>();
 
 Console.WriteLine("Wheels: ");
 Console.WriteLine(wheel.CurrentValue);

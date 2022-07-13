@@ -8,13 +8,13 @@ public static class WheelConfigExtensions
     public static string GetWheelConfigValues(this IConfiguration config)
     {
         IEnumerable<IConfigurationSection>? pairs = config.GetSection("Wheel").GetChildren();
-        string[] props = pairs.Select(pair => $"\"{pair.Key}\": \"{pair.Value}\"").ToArray();
+        var props = pairs.Select(pair => $"\"{pair.Key}\": \"{pair.Value}\"").ToArray();
         return $"{{\n{string.Join(",\n", props)}\n}}";
     }
 
     public static Wheel GetBoundWheelConfigValues(this IConfiguration config)
     {
-        IConfigurationSection wheelSection = config.GetSection("Wheel");
+        var wheelSection = config.GetSection("Wheel");
         Wheel wheel = new();
         wheelSection.Bind(wheel);
         return wheel;
@@ -24,5 +24,19 @@ public static class WheelConfigExtensions
     {
         services.Configure<Wheel>(config.GetSection("Wheel"));
         return services;
+    }
+
+    public static IConfigurationBuilder AddYamlFile(this IConfigurationBuilder builder, string path,
+        bool optional = true, bool reloadOnChange = false)
+    {
+        YamlConfigurationSource source = new()
+        {
+            Path = path,
+            Optional = optional,
+            ReloadOnChange = reloadOnChange
+        };
+        source.ResolveFileProvider();
+
+        return builder.Add(source);
     }
 }

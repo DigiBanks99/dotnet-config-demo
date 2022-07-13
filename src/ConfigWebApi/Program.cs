@@ -1,7 +1,9 @@
 using ConfigLib;
 using Microsoft.Extensions.Options;
 
-WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Configuration.AddYamlFile("appsettings.yml");
 
 // Add services to the container.
 
@@ -11,7 +13,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddAuthorization();
 builder.Services.AddWheelOptions(builder.Configuration);
 
-WebApplication app = builder.Build();
+var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment() || app.Environment.IsEnvironment("MyEnvironment"))
