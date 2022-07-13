@@ -4,7 +4,7 @@
     "ConfigConsoleApp": {
       "commandName": "Project",
       "environmentVariables": {
-        
+        "Wheel:Model": "Caravan"
       }
     }
   }
