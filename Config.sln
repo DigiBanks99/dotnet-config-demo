@@ -1,20 +1,20 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5996DBA5-6DE4-4A12-8376-6C76587EF18F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigConsoleApp", "src\ConfigConsoleApp\ConfigConsoleApp.csproj", "{2EA83530-A348-40E6-9443-93EEE3CB9D48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConfigConsoleApp", "src\ConfigConsoleApp\ConfigConsoleApp.csproj", "{2EA83530-A348-40E6-9443-93EEE3CB9D48}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigWebApi", "src\ConfigWebApi\ConfigWebApi.csproj", "{0239E67F-1826-4538-AE39-2724E8F25EA7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConfigWebApi", "src\ConfigWebApi\ConfigWebApi.csproj", "{0239E67F-1826-4538-AE39-2724E8F25EA7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{EC19E60F-EE11-432A-95A3-40C73F285621}"
 	ProjectSection(SolutionItems) = preProject
 		run.ps1 = run.ps1
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigLib", "src\ConfigLib\ConfigLib.csproj", "{D56D300A-BCC2-4BF8-AA57-F27B178AB761}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConfigLib", "src\ConfigLib\ConfigLib.csproj", "{D56D300A-BCC2-4BF8-AA57-F27B178AB761}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
